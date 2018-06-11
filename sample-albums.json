@@ -1,0 +1,20 @@
+{ "services": [{
+    "name": "Beauty",
+    "location": "Pink Floyd",
+    "price": 45,
+    "date": "2017",
+    "id": "1"
+    }, {
+    "name": "Automotive",
+    "location": "Redmond",
+    "price": 54,
+    "date": "2018",
+    "id": "2"
+    }, {
+    "name": "Cell Phones",
+    "location": "Kirkland",
+    "price": 36,
+    "date": "2016",
+    "id": "3"
+  }]
+}
