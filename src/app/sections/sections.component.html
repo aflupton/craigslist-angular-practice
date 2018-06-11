@@ -1,0 +1,7 @@
+<h2>Services</h2>
+
+<div *ngFor="let service of services" (click)="goToDetailPage(service)" class="panel panel-default">
+  <div class="panel-body">
+    <h4>Service Name: {{service.name}}, Location: {{service.location}}, Price: ${{service.price}}</h4>
+  </div>
+</div>
