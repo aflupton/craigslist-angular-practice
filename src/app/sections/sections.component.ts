@@ -11,16 +11,16 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [ServiceService]
 })
 export class SectionsComponent implements OnInit {
+  services: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
   constructor(private router: Router, private serviceService: ServiceService) { }
-
-  services: FirebaseListObservable<any[]>;
 
   ngOnInit () {
     this.services = this.serviceService.getServices();
   }
-  goToDetailPage(clickedService: Service) {
-    this.router.navigate(['services', clickedService.id]);
+  goToDetailPage(clickedService) {
+    this.router.navigate(['services', clickedService.$key]);
   };
 
 }

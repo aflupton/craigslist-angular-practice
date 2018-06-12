@@ -1,3 +1,3 @@
 export class Service {
-  constructor (public name: string, public location: string, public price: number, public date: string, public id: number) {}
+  constructor (public name: string, public location: string, public price: number, public date: string) {}
 }

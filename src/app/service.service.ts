@@ -16,11 +16,11 @@ export class ServiceService {
     return this.services;
   }
 
-  getServiceById(serviceId: number){
-    for (var i = 0; i <= SERVICES.length - 1; i++) {
-      if (SERVICES[i].id === serviceId) {
-        return SERVICES[i];
-      }
-    }
+  addService(newService: Service) {
+    this.services.push(newService);
+  }
+
+  getServiceById(serviceId: string){
+    return this.database.object('services/' + serviceId);
   }
 }

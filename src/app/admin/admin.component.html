@@ -1,31 +1,39 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Add New Album to Inventory</h3>
+    <h3 class="panel-title">Add a new service to the database</h3>
   </div>
   <div class="panel-body">
-    <div>
-      <label>Service name:</label>
-      <br>
-      <input #newName>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Service name:</label>
+          <input class="form-control" #newName>
+        </div>
+        <div class="form-group">
+          <label>Service location:</label>
+          <input class="form-control" #newLocation>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Service Price:</label>
+          <input class="form-control" #newPrice>
+        </div>
+        <div class="form-group">
+          <label>Service Date:</label>
+          <input class="form-control" #newDate>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <label>Service location:</label>
-      <br>
-      <input #newLocation>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-outline-secondary" (click)="submitForm(newName.value, newLocation.value, newPrice.value, newDate.value); newName.value=''; newLocation.value=''; newPrice.value=''; newDate.value=''">Add</button>
+      </div>
     </div>
-
-    <div>
-      <label>Service Date:</label>
-      <br>
-      <textarea #newDate></textarea>
-    </div>
-
-    <div>
-      <label>Service Price:</label>
-      <br>
-      <textarea #newPrice></textarea>
-    </div>
-    <button (click)="submitForm(newName.value, newLocation.value, newDate.value, newPrice.value); newName.value=''; newLocation.value=''; newDate.value=''; newPrice.value=''">Add</button>
   </div>
+</div>
+<br>
+<!-- list of services to edit -->
+<div class="panel panel-default">
+  <app-sections></app-sections>
 </div>

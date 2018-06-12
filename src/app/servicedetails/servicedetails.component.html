@@ -1,9 +1,18 @@
-<div class="col-md-6">
-  <ul>
-    <li>This service has the id: {{serviceId}}</li>
-    <li><strong>{{serviceToDisplay.name}}</strong></li>
-    <li>{{serviceToDisplay.location}}</li>
-    <li>{{serviceToDisplay.price}}</li>
-    <li>{{serviceToDisplay.date}}</li>
-  </ul>
+<div class="table">
+  <table>
+    <thead>
+      <th>KEY</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Price</th>
+      <th>Date</th>
+    </thead>
+    <tbody>
+      <th>{{serviceId}}</th>
+      <td>{{(serviceToDisplay | async)?.name}}</td>
+      <td>{{(serviceToDisplay |async)?.location}}</td>
+      <td>${{(serviceToDisplay |async)?.price}}</td>
+      <td>{{(serviceToDisplay |async)?.date}}</td>
+    </tbody>
+  </table>
 </div>

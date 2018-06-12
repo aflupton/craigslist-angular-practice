@@ -1,7 +1,36 @@
-<h2>Services</h2>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-header">
+      <h2 class="display-4"><em>Services</em></h2>
+    </div>
+    <br>
+    <div *ngFor="let service of services | async" (click)="goToDetailPage(service)" class="panel panel-default">
+      <div class="panel-body">
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr class="">
+                <th scope="col"class="">Description</th>
+                <th scope="col"class="">Location</th>
+                <th scope="col"class="">Price</th>
+                <th scope="col"class="">Date</th>
+                <th scope="col"class="">KEY</th>
+              </tr>
 
-<div *ngFor="let service of services | async" (click)="goToDetailPage(service)" class="panel panel-default">
-  <div class="panel-body">
-    <h4>Service Name: {{service.name}}, Location: {{service.location}}, Price: ${{service.price}}</h4>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td scope="row" class=""><span class="btn btn-outline-secondary">{{service.name}}</span></td>
+                <td class="">{{service.location}}</td>
+                <td class="">${{service.price}}</td>
+                <td class="">{{service.date}}</td>
+                <td class="">{{service.$key}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="" *ngIf="currentRoute === '/admin'">
+        <app-edit-service [selectedService]="service"></app-edit-service>
+      </div>
+    </div>
   </div>
 </div>
