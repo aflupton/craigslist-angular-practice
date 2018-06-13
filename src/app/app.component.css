@@ -1,3 +1,6 @@
 .container {
-  padding-bottom: 50px;
+  padding-bottom: 60px;
+}
+#address {
+  text-align: center;
 }

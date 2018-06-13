@@ -21,6 +21,16 @@ export class ServiceService {
   }
 
   getServiceById(serviceId: string){
-    return this.database.object('services/' + serviceId);
+    return this.database.object('/services/' + serviceId);
+  }
+
+  updateService(localUpdatedService) {
+    var serviceEntryInFirebase = this.getServiceById(localUpdatedService.$key);
+    serviceEntryInFirebase.update({name: localUpdatedService.name, location: localUpdatedService.location, price: localUpdatedService.price, date: localUpdatedService.date});
+  }
+
+  deleteService(localServiceToDelete) {
+    var serviceEntryInFirebase = this.getServiceById(localServiceToDelete.$key);
+    serviceEntryInFirebase.remove();
   }
 }

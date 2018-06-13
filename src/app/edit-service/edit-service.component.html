@@ -1,20 +1,25 @@
 <div class="panel panel-default">
-
-  <div class="row">
-    <h4 class="">Edit Album:</h4>
-    <div class="form-group">
-      <label>New Name:</label>
-      <input [(ngModel)]="selectedService.name">
+  <div class="row form-group">
+    <div class="col-md-4">
+      <label>Edit Name:</label>
+      <input class="form-control" [(ngModel)]="selectedService.name">
       <br>
-      <label>New Location:</label>
-      <input [(ngModel)]="selectedService.location">
+      <label>Edit Location:</label>
+      <input class="form-control" [(ngModel)]="selectedService.location">
     </div>
-    <div class="col-md-6">
-      <label>New Price:</label>
-      <input [(ngModel)]="selectedService.price">
+    <br>
+    <div class="col-md-4">
+      <label>Edit Price:</label>
+      <input class="form-control" [(ngModel)]="selectedService.price">
       <br>
-      <label>New Date:</label>
-      <input [(ngModel)]="selectedService.date">
+      <label>Edit Date:</label>
+      <input class="form-control" [(ngModel)]="selectedService.date">
     </div>
   </div>
+  <div class="form-group">
+    <button class="btn btn-outline-secondary" (click)="beginUpdatingService(selectedService)">Update</button>
+    <button class="btn btn-outline-secondary" (click)="beginDeletingService(selectedService)">Delete</button>
+  </div>
 </div>
+<!-- <hr>
+<button (click)="beginDeletingAlbum(selectedAlbum)">Delete</button> -->

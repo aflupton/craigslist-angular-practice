@@ -4,31 +4,30 @@
       <h2 class="display-4"><em>Services</em></h2>
     </div>
     <br>
-    <div *ngFor="let service of services | async" (click)="goToDetailPage(service)" class="panel panel-default">
+    <div *ngFor="let service of services | async" class="panel panel-default">
       <div class="panel-body">
-          <table class="table table-bordered">
-            <thead class="thead-light">
-              <tr class="">
-                <th scope="col"class="">Description</th>
-                <th scope="col"class="">Location</th>
-                <th scope="col"class="">Price</th>
-                <th scope="col"class="">Date</th>
-                <th scope="col"class="">KEY</th>
-              </tr>
-
-            </thead>
-            <tbody>
-              <tr class="">
-                <td scope="row" class=""><span class="btn btn-outline-secondary">{{service.name}}</span></td>
-                <td class="">{{service.location}}</td>
-                <td class="">${{service.price}}</td>
-                <td class="">{{service.date}}</td>
-                <td class="">{{service.$key}}</td>
-              </tr>
-            </tbody>
-          </table>
+        <table class="table table-bordered" (click)="goToDetailPage(service)">
+          <thead class="thead-light">
+            <tr class="">
+              <th scope="col"class="">Description</th>
+              <th scope="col"class="">Location</th>
+              <th scope="col"class="">Price</th>
+              <th scope="col"class="">Date</th>
+              <th scope="col"class="">KEY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="">
+              <td scope="row" class=""><span class="btn btn-outline-secondary">{{service.name}}</span></td>
+              <td class="">{{service.location}}</td>
+              <td class="">${{service.price}}</td>
+              <td class="">{{service.date}}</td>
+              <td class="">{{service.$key}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="" *ngIf="currentRoute === '/admin'">
+      <div *ngIf="currentRoute === '/admin'">
         <app-edit-service [selectedService]="service"></app-edit-service>
       </div>
     </div>

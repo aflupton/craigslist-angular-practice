@@ -14,6 +14,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AdminComponent } from './admin/admin.component';
 import { EditServiceComponent } from './edit-service/edit-service.component';
+import { AboutComponent } from './about/about.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     SectionsComponent,
     ServiceDetailsComponent,
     AdminComponent,
-    EditServiceComponent
+    EditServiceComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
