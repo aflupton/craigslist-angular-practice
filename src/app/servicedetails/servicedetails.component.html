@@ -9,10 +9,10 @@
     </thead>
     <tbody>
       <th>{{serviceId}}</th>
-      <td>{{(serviceToDisplay | async)?.name}}</td>
-      <td>{{(serviceToDisplay |async)?.location}}</td>
-      <td>${{(serviceToDisplay |async)?.price}}</td>
-      <td>{{(serviceToDisplay |async)?.date}}</td>
+      <td>{{serviceToDisplay?.name}}</td>
+      <td>{{serviceToDisplay?.location}}</td>
+      <td>${{serviceToDisplay?.price}}</td>
+      <td>{{serviceToDisplay?.date}}</td>
     </tbody>
   </table>
 </div>
